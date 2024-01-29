@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Single+Day&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: linear-gradient(90deg,#0a011e 0,#000);
+    height: 100vh;
+    display: flex;
+    flex-direction: column; /* Change from 'row' to 'column' */
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Add justify-content to center vertically */
+    height: 100vh;
+    width: 50%;
+    font-family: 'Ubuntu', sans-serif;
+}
+.content {
+    max-width: 600px;
+    padding: 20px 40px;
+    text-align: center;
+    display: flex;
+}
+
+.even,
+.odd {
+    font-size: 40px;
+    margin: 0 10px;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+}
+
+.even {
+    animation: float1 6s ease-in-out infinite;
+}
+
+.odd {
+    animation: float2 6s ease-in-out infinite;
+}
+
+.icon {
+    font-size: 40px;
+}
+
+.icon a {
+    color: #cccccc;
+    text-decoration: none;
+    transition: all 0.4s ease-in-out;
+}
+
+.icon a:hover {
+    color: #ffffff;
+}
+
+.text {
+    text-align: center;
+    color: #ffffff;
+    margin-top: 20px;
+    position: relative; /* Add relative positioning to the text container */
+}
+
+.text h2{
+    color: yellow;
+    letter-spacing: 2px;
+}
+
+.glowing-text {
+    font-size: 60px;
+    font-weight: bold;
+    animation: glow 2s ease-in-out infinite;
+    color: rgb(255, 255, 255); 
+}
+h2 {
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+.text p {
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+.subscribe-form {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center the form horizontally */
+}
+
+input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #ffffff;
+    color: #243b55;
+    border: none;
+    border-radius: 5px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.tagline {
+    margin-top: 20px;
+    font-size: 16px;
+    font-style: italic;
+    color: #cccccc;
+}
+
+footer {
+    margin-top: 20px;
+    text-align: center;
+    color: #ffffff;
+    font-size: 25px;
+    padding-bottom: 20px;
+    font-family: 'Single Day', cursive; 
+}
+
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 8px rgba(0, 191, 255, 0.8); /* Aqua color */
+    }
+    50% {
+        text-shadow: 0 0 20px rgba(0, 191, 255, 0.8);
+    }
+    100% {
+        text-shadow: 0 0 8px rgba(0, 191, 255, 0.8);
+    }
+}
+
+@keyframes float1 {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes float2 {
+    0% {
+        transform: translateY(-20px);
+    }
+    50% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-20px);
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    
+    .glowing-text{
+        font-size: 40px;
+    }
+    .even, .odd{
+        font-size: 40px;
+    }
+    .text h2{
+        font-size: 12px;
+    }
+    .text p{
+        font-size: 14px;
+    }
+    footer{
+        font-size: 16px;
+    }
+}
