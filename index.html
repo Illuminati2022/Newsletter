@@ -24,16 +24,43 @@
             <h1 class="glowing-text">Codename Origin Network</h1>
             <h2>Weekly tech awesomeness! 🌐 Explore the coolest, weirdest, and mind-blowing tech discoveries worldwide. Tech news should be as fun as the tech itself! 🚀</h2>
 
-            <form class="subscribe-form">
-                <input type="email" placeholder="Enter your email" required>
-                <button type="submit">Subscribe</button>
+            <form class="subscribe-form" id="subscribeForm">
+                <input type="email" placeholder="Enter your email" required id="emailInput">
+                <button type="submit" onclick="subscribe()">Subscribe</button>
             </form>
 
             <p class="tagline"> Join 2000+ subscribers, Unleashing the Geek in You, One Weekly Byte at a Time! 🤓🌍</p>
-            <p>
-Tech, laughter, innovation - Codename Origin Network delivers your weekly tech fix with a side of smiles. 😎🔥</p>
+            <p>Tech, laughter, innovation - Codename Origin Network delivers your weekly tech fix with a side of smiles. 😎🔥</p>
         </div>
     </div>
+    <script>
+        function subscribe() {
+            const email = document.getElementById('emailInput').value;
+
+            fetch('https://vedantk.substack.com/api/v1/free', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    first_url: "https://vedantk.substack.com/api/v1/free",
+                    first_referrer: "",
+                    additional_referring_pub_ids: "",
+                    current_referrer: "https://vedantk.substack.com/api/v1/free",
+                    current_url: "https://vedantk.substack.com/",
+                    email: email,
+                    first_referrer: "",
+                    first_url: "https://vedantk.substack.com/api/v1/free",
+                    referral_code: "",
+                    referring_pub_id: "",
+                    source: "cover_page"
+                }),
+            })
+            .then(response => response.json())
+            .then(data => console.log(data))
+            .catch(error => console.error('Error:', error));
+        }
+    </script>
 </body>
 <footer>
     <p>&copy; 2024 Codename Origin Newsletter. All rights reserved.</p>
